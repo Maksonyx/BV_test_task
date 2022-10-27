@@ -1,0 +1,149 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.App {
+  width: 800px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form {
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.login-form > span {
+  margin: 15px 0;
+}
+
+.sport-item {
+  display: flex;
+  padding: 15px;
+  margin-top: 15px;
+  border: 2px solid teal;
+  justify-content: space-between;
+  align-items: center;
+  transition: all ease-in-out 500ms;
+}
+
+.sport-item:hover {
+  transform: scale(1.05);
+}
+
+.sport-item__content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.sport-item__btns {
+  display: flex;
+}
+
+.navbar {
+  height: 50px;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  background: lightgray;
+  transition: all ease-in-out 250ms;
+}
+
+.navbar__links {
+  margin-left: auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.navbar__links a {
+  margin-left: auto;
+  padding: 5px 10px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: teal;
+  display: block;
+  border-left: 1px solid teal;
+}
+.navbar__links a:last-child {
+  border-right: 1px solid teal;
+}
+
+.navbar__links a:hover {
+  color: darkolivegreen;
+}
+
+.comp-item {
+  margin: 15px 0;
+}
+
+.event-item {
+  border: 1px solid teal;
+  padding: 10px;
+  margin: 4px 0;
+  background: rgb(0 128 128 / 8%);
+}
+
+.market {
+  margin: 10px 5px;
+}
+
+.outcome {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid teal;
+  margin: 5px 0;
+}
+
+.outcome-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.outcome-item {
+  border: 1px solid teal;
+  margin: 5px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 100px;
+  transition: all ease-in-out 250ms;
+  width: 100%;
+}
+
+.outcome-item:hover {
+  transform: scale(1.05);
+}
+
+.outcome-item.selected {
+  background: teal;
+  color: #fff;
+}
+
+.outcome-item-title-dimension {
+  font-weight: 500;
+  color: teal;
+}
