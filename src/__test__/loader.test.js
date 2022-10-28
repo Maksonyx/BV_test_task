@@ -12,7 +12,9 @@ test('Loader on Sports page', () => {
                 <Loader />
             </Sports>
         </Provider>
-    )
+    );
+
     const appEment = screen.getByTestId('loader');
+
     expect(appEment).toBeInTheDocument();
 })

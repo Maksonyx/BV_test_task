@@ -12,7 +12,9 @@ test('Render ABOUT in Navbar', () => {
                 <Navbar />
             </BrowserRouter>
         </Provider>
-    )
+    );
+
     const appEment = screen.getByText(/about/i);
+
     expect(appEment).toBeInTheDocument();
 })

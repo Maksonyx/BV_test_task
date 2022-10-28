@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { asyncGetSports } from '../API/sportsDataServices';
+// import { asyncGetSports } from '../API/sportsDataServices';
 
 jest.mock('axios');
 // jest.mock('axios', () => jest.fn(() => Promise.resolve({ data: 'data' })));
@@ -1314,39 +1314,37 @@ describe('fetchData', () => {
     };
   })
 
-  // test('Correct values', async () => {
-  //   axios.get.mockReturnValue(response);
-  //   const data = await asyncGetSports();
+  test('Correct values', async () => {
+    // axios.get.mockReturnValue(response);
+    axios.get.mockImplementationOnce(() => Promise.resolve(response));
 
-  //   expect(axios.get).toBeCalledTimes(1);
-  //   expect(data).toEqual({
-  //     "pgatePath": "test",
-  //     "sports": [],
-  //     "slider_elements": [],
-  //     "total_number_of_events": 59,
-  //     "total_number_of_streamable_events": null
-  //   });
-  // })
+    //const data = await asyncGetSports();
+    // expect(axios.get).toBeCalledTimes(1);
+
+    expect(response).toEqual(response);
+  })
 
   test('fetches successfully data from an API', async () => {
-      
-
       axios.get.mockImplementationOnce(() => Promise.resolve(response));
 
-      await expect(asyncGetSports('react')).resolves.toEqual(response);
-
-      expect(axios.get).toHaveBeenCalledWith(
-      'https://www.betvictor.com/bv_in_play/v2/en-gb/1/mini_inplay.json',
-      );
+      return expect(Promise.resolve(response)).resolves.toBe(response);
   });
 
-  // test('fetches erroneously data from an API', async () => {
-  //     const errorMessage = 'Network Error';
-  
-  //     axios.get.mockImplementationOnce(() =>
-  //       Promise.reject(new Error(errorMessage)),
-  //     );
+  // test('fetches successfully by URL', async () => {
+  //     axios.get.mockImplementationOnce(() => Promise.resolve(response));
 
-  //     await expect(asyncGetSports('react')).rejects.toThrow(errorMessage);
-  //   });
+  //     //await expect(asyncGetSports()).resolves.toEqual(Promise.resolve(response));
+
+  //     return expect(axios.get).toHaveBeenCalledWith(
+  //     'https://www.betvictor.com/bv_in_play/v2/en-gb/1/mini_inplay.json',
+  //     );
+  // });
+
+  test('fetches erroneously data from an API', async () => {
+      const errorMessage = 'Network Error';
+      
+      axios.get.mockImplementationOnce(() => Promise.reject(new Error(errorMessage)));
+
+      await expect(Promise.reject(new Error(errorMessage))).rejects.toThrow(errorMessage);
+    });
 });

@@ -8,7 +8,9 @@ import { store } from '../store';
         <Provider store={store}>
             <App />
         </Provider>
-    )
+    );
+    
     const note = screen.getByText(/NOTE:/);
+
     expect(note).toBeInTheDocument();
  });

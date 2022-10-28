@@ -32,6 +32,7 @@ describe('TEST ROUTES', () => {
                 </MemoryRouter>
             </Provider>
         );
+        
         expect(screen.getByTestId('login-form')).toBeInTheDocument();
     });
 
@@ -63,5 +64,4 @@ describe('TEST ROUTES', () => {
         expect(screen.getByTestId('sports-comp')).toBeInTheDocument();
         expect(screen.getByTestId('loader')).toBeInTheDocument();
     });
-
 })
